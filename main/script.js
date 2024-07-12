@@ -1202,33 +1202,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const utterance = createUtterance();
     window.speechSynthesis.speak(utterance);
   });
-
-  function createUtterance(text) {
-    const speechText = text || document.getElementById("speech-text").value;
-    const speechPitch =
-      parseFloat(document.getElementById("speech-pitch").value) / 100;
-    const speechRate =
-      parseFloat(document.getElementById("speech-rate").value) / 100;
-    const speechVolume =
-      parseFloat(document.getElementById("speech-volume").value) / 100;
-    const speechVoiceIndex = parseInt(
-      document.getElementById("speech-voice").value
-    );
-
-    const utterance = new SpeechSynthesisUtterance(speechText);
-    utterance.pitch = speechPitch;
-    utterance.rate = speechRate;
-    utterance.volume = speechVolume;
-
-    const voices = window.speechSynthesis.getVoices();
-    if (voices[speechVoiceIndex]) {
-      utterance.voice = voices[speechVoiceIndex];
-    } else {
-      console.warn("Selected voice is not available.");
-    }
-
-    return utterance;
-  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
