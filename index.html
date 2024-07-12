@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main/style.css">
+
+  <title>Alien Instruments UBIK</title>
+</head>
+
+<body class="letterSpacing wordSpacing">
+
+  <h1 style="font-family: 'Alien'; font-size: 46px;">Alien Instruments UBIK</h1>
+  <h2 style="font-family: 'Alien'; font-size: 34px;">The Roll Your Own Talking MIDI Mapping Solution</h2>
+
+  <div style="padding: 10px;">
+
+    <h2>Font Settings</h2>
+    <p>Change the font and attributes here if you wish, these can be changed at anytime in the interface settings menu.
+      We provide a tour of the interface and all settings, if you need a larger font you can change it now before
+      starting the tour.</p>
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+      <div class="font" style="width: 12rem;">
+        <label for="font-size-select">Size</label>
+        <select id="font-size-select">
+          <option value="20">Small</option>
+          <option value="25">Medium</option>
+          <option value="30">Large</option>
+          <option value="35">Largest</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 12rem;">
+        <label for="bold-select">Bold</label>
+        <select id="bold-select">
+          <option value="normal">Off</option>
+          <option value="bold">On</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 18rem;">
+        <label for="font-family-select">Family</label>
+        <select id="font-family-select">
+          <option value="Arial">Arial</option>
+          <option value="Arial Narrow">Arial Narrow</option>
+          <option value="Times New Roman">Times N R</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Courier">Courier</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Andale Mono">Andale Mono</option>
+          <option value="Candara">Candara</option>
+          <option value="Geneva">Geneva</option>
+          <option value="Optima">Optima</option>
+          <option value="Trebuchet MS">Trebuchet MS</option>
+          <option value="Gill Sans">Gill Sans</option>
+          <option value="Palatino">Palatino</option>
+          <option value="Monaco">Monaco</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="CustomFont">Open Dyslexic</option>
+          <option value="Luminari">Luminari</option>
+          <option value="Chalkduster">Chalkduster</option>
+          <option value="Marker Felt">Marker Felt</option>
+          <option value="Bradley Hand">Bradley Hand</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 12rem;">
+        <label for="font-style-select">Style</label>
+        <select id="font-style-select">
+          <option value="normal">Normal</option>
+          <option value="italic">Italic</option>
+          <option value="underline">Underline</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 12rem;">
+        <label for="font-variant-select">Variant</label>
+        <select id="font-variant-select">
+          <option value="normal">Normal</option>
+          <option value="small-caps">Small Caps</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <div class="slider-container" id="letter-tour">
+        <label for="letter-spacing-slider">Letter Spacing</label>
+        <input type="range" min="0" max="0.2" value="0" step="0.01" id="letter-spacing-slider">
+      </div>
+
+      <div class="slider-container" id="word-tour">
+        <label for="word-spacing-slider">Word Spacing</label>
+        <input type="range" min="0" max="0.5" value="0" step="0.01" id="word-spacing-slider">
+      </div>
+      <div class="slider-container">
+        <label for="line-spacing-slider">Line Spacing</label>
+        <input type="range" min="1" max="2" value="1" step="0.1" id="line-spacing-slider"><br>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="accessDiv" class="hidden" style="text-align: center;">
+    <button id="toggleAccess" class="button wordSpacing letterSpacing">Show Interface Settings</button>
+    <h2>Font Settings</h2>
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+      <div class="font" style="width: 12rem;">
+        <label for="font-size-select">Size</label>
+        <select id="font-size-select">
+          <option value="20">Small</option>
+          <option value="25">Medium</option>
+          <option value="30">Large</option>
+          <option value="35">Largest</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 12rem;">
+        <label for="bold-select">Bold</label>
+        <select id="bold-select">
+          <option value="normal">Off</option>
+          <option value="bold">On</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 18rem;">
+        <label for="font-family-select">Family</label>
+        <select id="font-family-select">
+          <option value="Arial">Arial</option>
+          <option value="Arial Narrow">Arial Narrow</option>
+          <option value="Times New Roman">Times N R</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Courier">Courier</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Andale Mono">Andale Mono</option>
+          <option value="Candara">Candara</option>
+          <option value="Geneva">Geneva</option>
+          <option value="Optima">Optima</option>
+          <option value="Trebuchet MS">Trebuchet MS</option>
+          <option value="Gill Sans">Gill Sans</option>
+          <option value="Palatino">Palatino</option>
+          <option value="Monaco">Monaco</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="CustomFont">Open Dyslexic</option>
+          <option value="Luminari">Luminari</option>
+          <option value="Chalkduster">Chalkduster</option>
+          <option value="Marker Felt">Marker Felt</option>
+          <option value="Bradley Hand">Bradley Hand</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 12rem;">
+        <label for="font-style-select">Style</label>
+        <select id="font-style-select">
+          <option value="normal">Normal</option>
+          <option value="italic">Italic</option>
+          <option value="underline">Underline</option>
+        </select>
+      </div>
+
+      <div class="font" style="width: 12rem;">
+        <label for="font-variant-select">Variant</label>
+        <select id="font-variant-select">
+          <option value="normal">Normal</option>
+          <option value="small-caps">Small Caps</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="styled-text">
+        Use the colour pickers below to change the colours of the page and controls.
+      </h2>
+    </div>
+
+    <div class="main">
+      <div>
+        <div class="color-picker-row">
+          <p>Page</p>
+        </div>
+        <div class="color-picker-row">
+          <label for="color-picker-2">Fill</label>
+          <input type="color" id="color-picker-2">
+        </div>
+        <div class="color-picker-row">
+          <label for="border-picker">Border</label>
+          <input type="color" id="border-picker">
+        </div>
+        <div class="color-picker-row">
+          <label for="color-picker">Font</label>
+          <input type="color" id="color-picker">
+        </div>
+        <div class="color-picker-row">
+          <label for="focus-color-picker">Focus</label>
+          <input type="color" id="focus-color-picker">
+        </div>
+      </div>
+
+      <div>
+        <div class="color-picker-row">
+          <p>Button</p>
+        </div>
+        <div class="color-picker-row">
+          <label for="color-picker-5">Fill</label>
+          <input type="color" id="color-picker-5">
+        </div>
+        <div class="color-picker-row">
+          <label for="button-border-picker">Border</label>
+          <input type="color" id="button-border-picker">
+        </div>
+        <div class="color-picker-row">
+          <label for="button-font-picker">Font</label>
+          <input type="color" id="button-font-picker">
+        </div>
+        <div class="color-picker-row">
+          <label for="group-background-picker">Toggle</label>
+          <input type="color" id="group-background-picker">
+        </div>
+        <div class="checkbox-wrapper" style="border: none;">
+          <input type="checkbox" id="toggle">
+          <label class="radiobutton" for="toggle">
+            <span class="led-indicator"></span>
+            Toggle
+
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <div class="color-picker-row">
+          <p>Select</p>
+        </div>
+        <div class="color-picker-row">
+          <label for="select-background-picker">Fill</label>
+          <input type="color" id="select-background-picker">
+        </div>
+        <div class="color-picker-row">
+          <label for="select-border-picker">Border</label>
+          <input type="color" id="select-border-picker">
+        </div>
+        <div class="color-picker-row">
+          <label for="select-font-picker">Font</label>
+          <input type="color" id="select-font-picker">
+        </div>
+        <div class="testSelect" style="border: none;">
+          <select id="font-test-select">
+            <option value="20" selected>Option</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <div class="color-picker-row">
+          <p>Popup</p>
+        </div>
+        <div class="color-picker-row module-wrapper">
+          <label aria-hidden="true" for="black-keys-colour-picker">Fill</label>
+          <input type="color" id="black-keys-colour-picker">
+        </div>
+        <div class="color-picker-row module-wrapper">
+          <label aria-hidden="true" for="white-keys-colour-picker">Border</label>
+          <input type="color" id="white-keys-colour-picker">
+        </div>
+        <div class="color-picker-row module-wrapper">
+          <label aria-hidden="true" for="key-font-colour-picker">Font</label>
+          <input type="color" id="key-font-colour-picker">
+        </div>
+        <input style="width: 170px; height: 50px;" type="text" id="Test-input" placeholder="Text Entry" />
+      </div>
+
+
+      <div class="main">
+        <div>
+          <div class="color-picker-row">
+            <p>Slider</p>
+          </div>
+          <div class="color-picker-row">
+            <label for="color-picker-3">Thumb</label>
+            <input type="color" id="color-picker-3">
+          </div>
+          <div class="color-picker-row">
+            <label for="slider-outline-picker">Border</label>
+            <input type="color" id="slider-outline-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="color-picker-4">Track</label>
+            <input type="color" id="color-picker-4">
+          </div>
+          <div class="knobSelect" style="border: none; text-align: center;">
+            <label for="knob-design-select">Slider Style</label><br>
+            <select id="knob-design-select">
+              <option value="classic">Classic</option>
+              <option value="minimal">Minimal</option>
+              <option value="fancy">Fancy</option>
+              <option value="retro">Retro</option>
+              <option value="modern">Modern</option>
+              <option value="neon">Neon</option>
+              <option value="flat">Flat</option>
+              <option value="shadow">Shadow</option>
+              <option value="outline">Outline</option>
+              <option value="glow">Glow</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="color-picker-row">
+            <p>Panel</p>
+          </div>
+          <div class="color-picker-row">
+            <label for="panel-background-picker">Fill</label>
+            <input type="color" id="panel-background-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="panel-border-picker">Border</label>
+            <input type="color" id="panel-border-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="panel-gradient-picker">Gradient</label>
+            <input type="color" id="panel-gradient-picker">
+          </div>
+          <div class="checkbox-wrapper" style="border: none;">
+            <input type="checkbox" id="toggle-gradients">
+            <label class="radiobutton" for="toggle-gradients">
+              <span class="led-indicator"></span>
+              Remove<br>
+              Gradient
+            </label>
+          </div>
+        </div>
+        <div class="slider-container">
+          <label aria-hidden="true" for="test">Slider</label>
+          <input aria-label="Test Slider" class="slider" id='test' max='100' min='0' step="1" type='range' value="1">
+          <span aria-hidden="true">100</span>
+          <select id="test-select">
+            <option value="20" selected>Option</option>
+          </select>
+          <button>Button</button>
+          <button>Button</button>
+        </div>
+
+        <div>
+          <div class="color-picker-row">
+            <p>Label</p>
+          </div>
+          <div class="color-picker-row">
+            <label for="label-background-picker">Fill</label>
+            <input type="color" id="label-background-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="label-border-picker">Border</label>
+            <input type="color" id="label-border-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="label-font-picker">Font</label>
+            <input type="color" id="label-font-picker">
+          </div>
+        </div>
+
+        <div>
+          <div class="color-picker-row">
+            <p>Output</p>
+          </div>
+          <div class="color-picker-row">
+            <label for="output-background-picker">Fill</label>
+            <input type="color" id="output-background-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="output-border-picker">Border</label>
+            <input type="color" id="output-border-picker">
+          </div>
+          <div class="color-picker-row">
+            <label for="output-font-picker">Font</label>
+            <input type="color" id="output-font-picker">
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="slider-container">
+          <label for="border-radius-slider">Border Radius</label>
+          <input type="range" id="border-radius-slider" min="1" max="15" step="1" value="10">
+        </div>
+
+        <div class="slider-container">
+          <label for="focus-size-slider">Focus Size</label>
+          <input type="range" id="focus-size-slider" min="1" max="8" value="4">
+        </div>
+
+
+        <div class="slider-container">
+          <label for="letter-spacing-slider">Letter Spacing</label>
+          <input type="range" min="0" max="0.2" value="0" step="0.01" id="letter-spacing-slider">
+        </div>
+
+        <div class="slider-container">
+          <label for="word-spacing-slider">Word Spacing</label>
+          <input type="range" min="0" max="0.5" value="0" step="0.01" id="word-spacing-slider">
+        </div>
+      </div>
+      <div class="main">
+        <input type="text" id="preset-name" placeholder="Enter preset name">
+        <button id="save-preset">Save Access Preset</button>
+        <select style="width: 300px;" id="preset-list">
+          <option value="">Select a preset</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div style="padding: 10px;">
+    <p>Welcome to Alien Instruments UBIK, the talking MIDI mapping solution. Create groups for your controls and start
+      adding sliders and buttons to send MIDI CC’s. Completely accessible for screen reading and keyboard navigation.
+      Labelling groups and components also labels for screen reading. Design your own interface and map it to the device
+      or software you wish to control. Each slider has a MIDI learn button, click this and follow the voice prompts to
+      map your controller. When adding a slider, you can map the output range displayed on the screen and spoken aloud
+      to and integer or float to match the parameter you are controlling. Alternatively, you can display or hear the
+      current MIDI CC value. For buttons you can set the on value to any cc value, when mapped this will speak as
+      “parameter name” on and off and display the same in the button. To get started click the add group button and
+      follow the prompts. Or take a guided tour of the interface and settings by clicking the "Start Tour" button.
+    </p>
+    <p>
+    <p>If you are using a screen reader to take the tour after clicking start tour focus will go to a heading level 2,
+      this is the parameter name, and that component shows focus in the UI. Use the tab key and next will be a heading
+      level 3 with a description and context of the area or item. Press tab again and you will focus on the next button,
+      followed by previous and then close buttons. When the tour ends there will be a finish button.</p>
+    </p>
+
+    <p>Have fun and enjoy!</p>
+    <button onclick="window.location.href='main/ubik.html'">Start Mapping</button>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="accessibility/accessibilitySettings.js"></script>
+</body>
+
+</html>
