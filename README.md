@@ -16,3 +16,5 @@ Full support for screen readers, including a custom tour of the interface highli
 Save and load your controller layouts, within each layout patches can be saved for the current control positions. When loading all controls send MIDI CC value. Added so I could save preset patches for some old hardware without SYSEX.
 
 Send Program Change messages.
+
+I recomend Google Chrome or Microsoft Edge as they have the best support of the API's in this project.
