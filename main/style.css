@@ -23,6 +23,7 @@ body {
   --font-weight: normal;
   --font-style: normal;
   --font-variant: normal;
+ --text-decoration: normal;
 }
 
 body,
@@ -45,6 +46,7 @@ input[type="text"] {
   letter-spacing: var(--letter-spacing);
   word-spacing: var(--word-spacing);
   line-height: var(--line-spacing);
+  text-decoration: var(--text-decoration);
 }
 
 /* Define focus styles for all elements */
